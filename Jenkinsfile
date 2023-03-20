@@ -41,7 +41,7 @@ pipeline {
             
             steps {
                 script{
-                    echo 'building the application  ...  '
+                    echo 'building the application..'
                     echo "Software version is ${NEW_VERSION}"
                     sh 'mvn build-helper:parse-version versions:set -DnewVersion=\\\${parsedVersion.majorVersion}.\\\${parsedVersion.nextMinorVersion}.\\\${parsedVersion.incrementalVersion}\\\${parsedVersion.qualifier?}' 
                     sh 'mvn clean package'
