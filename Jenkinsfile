@@ -22,6 +22,10 @@ pipeline {
         //         git branch: 'master', credentialsId: 'git-credentials', url: 'https://github.com/learnwithparth/springboot-jenkins.git'
         //     }
         // }
+         stage('Initialize'){
+                def dockerHome = tool 'myDocker'
+                env.PATH = "${dockerHome}/bin:${env.PATH}"
+            }
         stage('init'){
             steps{
                 script{
