@@ -63,9 +63,9 @@ pipeline {
             }
         }
       stage('deploy') {
-          sshagent(['Production']) {
-              // some block
-          }
+//           sshagent(['Production']) {
+//               // some block
+//           }
         input{
             message "Select the environment to deploy"
             ok "done"
